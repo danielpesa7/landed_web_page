@@ -2485,7 +2485,7 @@ input, select, textarea {
 	}
 
 		.image:before {
-			content: '';
+			/*content: '';*/
 			display: block;
 			position: absolute;
 			left: 0;
@@ -3437,7 +3437,7 @@ input, select, textarea {
 			width: 1%;
 		}
 
-		#banner:after {
+		/*#banner:after {
 			background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
 			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
 			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
@@ -3449,7 +3449,7 @@ input, select, textarea {
 			position: absolute;
 			top: 0;
 			width: 100%;
-		}
+		}*/
 
 		#banner .content {
 			display: inline-block;
@@ -3799,7 +3799,7 @@ input, select, textarea {
 
 			#banner {
 				box-shadow: 0 0.125em 0.5em 0 rgba(0, 0, 0, 0.25);
-				min-height: calc(100vh - 44px);
+				min-height: calc(12vh - 44px);
 			}
 
 				#banner:before {
