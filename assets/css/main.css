@@ -3437,7 +3437,7 @@ input, select, textarea {
 			width: 1%;
 		}
 
-		/*#banner:after {
+		#banner:after {
 			background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
 			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
 			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");;
@@ -3449,7 +3449,7 @@ input, select, textarea {
 			position: absolute;
 			top: 0;
 			width: 100%;
-		}*/
+		}
 
 		#banner .content {
 			display: inline-block;
