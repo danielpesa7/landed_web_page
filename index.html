@@ -1,236 +1,416 @@
 <!DOCTYPE HTML>
 <!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Modern Portfolio for Daniel Perico
+	Based on Landed by HTML5 UP - Dark modern design
 -->
 <html>
 	<head>
-		<title>Daniel G Perico Sánchez</title>
+		<title>Daniel G Perico Sánchez - Data Engineer</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Modern dark theme styling */
+			body.landing {
+				background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+				min-height: 100vh;
+			}
+			
+			#banner {
+				background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+				position: relative;
+				overflow: hidden;
+				margin-bottom: 0;
+				padding-bottom: 2rem;
+			}
+			
+			#banner::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: 
+					radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+					radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+				animation: waveMotion 8s ease-in-out infinite;
+			}
+			
+			@keyframes waveMotion {
+				0%, 100% { transform: translateY(0px) rotate(0deg); }
+				50% { transform: translateY(-10px) rotate(1deg); }
+			}
+			
+			#banner .content {
+				position: relative;
+				z-index: 2;
+				background: rgba(30, 41, 59, 0.4);
+				backdrop-filter: blur(20px);
+				border-radius: 20px;
+				margin: 2rem;
+				padding: 3rem;
+				border: 1px solid rgba(59, 130, 246, 0.2);
+			}
+			
+			#banner .content header h2 {
+				color: #e2e8f0;
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+				margin-bottom: 1rem;
+			}
+			
+			#banner .content header p {
+				color: #94a3b8;
+				font-size: 1.2rem;
+			}
+			
+			#banner .content .image {
+				border-radius: 50% !important;
+				border: 3px solid rgba(59, 130, 246, 0.3);
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				overflow: hidden;
+				display: inline-block;
+				width: 18em;
+				height: 18em;
+				margin-left: 3em;
+				vertical-align: middle;
+			}
+			
+			#banner .content .image img {
+				border-radius: 50% !important;
+				width: 100% !important;
+				height: 100% !important;
+				object-fit: cover;
+				display: block;
+			}
+			
+			#banner .content .image:hover {
+				transform: scale(1.05);
+				box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+				border-color: rgba(59, 130, 246, 0.5);
+			}
+			
+			/* Modern sections */
+			.modern-section {
+				background: rgba(30, 41, 59, 0.9);
+				backdrop-filter: blur(20px);
+				border-radius: 20px;
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+				border: 1px solid rgba(59, 130, 246, 0.2);
+				margin: 1rem 2rem 2rem 2rem;
+				padding: 2rem;
+				color: #e2e8f0;
+			}
+			
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-top: 2rem;
+			}
+			
+			.skill-card {
+				background: rgba(15, 23, 42, 0.8);
+				padding: 2rem;
+				border-radius: 15px;
+				border: 1px solid rgba(59, 130, 246, 0.2);
+				transition: transform 0.3s ease, border-color 0.3s ease;
+			}
+			
+			.skill-card:hover {
+				transform: translateY(-5px);
+				border-color: rgba(59, 130, 246, 0.4);
+			}
+			
+			.skill-icon {
+				font-size: 2.5rem;
+				color: #60a5fa;
+				margin-bottom: 1rem;
+			}
+			
+			.cta-buttons {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				margin-top: 2rem;
+				flex-wrap: wrap;
+			}
+			
+			.modern-button {
+				background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+				color: white;
+				padding: 1rem 2rem;
+				border: none;
+				border-radius: 10px;
+				text-decoration: none;
+				font-weight: 500;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+			}
+			
+			.modern-button:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+				color: white;
+				border-bottom: none;
+			}
+			
+			.modern-button.secondary {
+				background: transparent;
+				border: 2px solid #3b82f6;
+				color: #60a5fa;
+			}
+			
+			.modern-button.secondary:hover {
+				background: #3b82f6;
+				color: white;
+			}
+			
+			/* Navigation updates */
+			#header {
+				background: rgba(15, 23, 42, 0.95);
+				backdrop-filter: blur(20px);
+				border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+			}
+			
+			#header nav ul li a:hover {
+				color: #60a5fa !important;
+			}
+			
+			/* Spotlight section styling */
+			.spotlight.modern {
+				background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+				color: #e2e8f0;
+			}
+			
+			.spotlight.modern .content {
+				background: rgba(30, 41, 59, 0.8);
+				backdrop-filter: blur(20px);
+				border-radius: 20px;
+				border: 1px solid rgba(59, 130, 246, 0.2);
+			}
+			
+			/* Footer updates */
+			#footer {
+				background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+				border-top: 1px solid rgba(59, 130, 246, 0.2);
+			}
+			
+			/* Adjust goto-next spacing */
+			.goto-next {
+				margin-bottom: 1rem;
+			}
+			
+			/* Override template spacing */
+			#about {
+				margin-top: 0 !important;
+				padding-top: 1rem !important;
+			}
+			
+			/* Reduce overall spacing between banner and content */
+			body.landing #page-wrapper {
+				padding-top: 0;
+			}
+			@media (max-width: 768px) {
+				#banner .content {
+					margin: 1rem;
+					padding: 2rem;
+				}
+				.modern-section {
+					margin: 1rem;
+					padding: 1.5rem;
+				}
+				.skills-grid {
+					grid-template-columns: 1fr;
+				}
+				.cta-buttons {
+					flex-direction: column;
+					align-items: center;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload landing">
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"> <a></a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#">Navigate</a>
-								<ul>
-									<li><a href="work-experience.html">Work experience</a></li>
-									<li><a href="data-machine.html">Data Science & AI</a></li>
-									<li><a href="titanic.html">Prediction Demo</a></li>
-									<li><a href="chatbot.html">Converse with my Personal Bot 🤖</a></li>
-									<!--<li><a href="no-sidebar.html">No Sidebar</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option 1</a></li>
-											<li><a href="#">Option 2</a></li>
-											<li><a href="#">Option 3</a></li>
-											<li><a href="#">Option 4</a></li>
-										</ul>
-									</li>-->
-								</ul>
-							</li>
-							<!--<li><a href="elements.html">Elements</a></li>-->
-							<!--<li><a href="#" class="button primary">Sign Up</a></li>-->
-						</ul>
-					</nav>
-				</header>
+			<header id="header">
+				<h1 id="logo"><a href="index.html">Daniel Perico</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a href="#">Navigate</a>
+							<ul>
+								<li><a href="work-experience.html">Work Experience</a></li>
+								<li><a href="data-machine.html">Data Science & AI</a></li>
+								<li><a href="chatbot.html">Converse with my Personal Bot 🤖</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
 
 			<!-- Banner -->
-				<section id="banner">
-					<div class="content">
-						<header>
-							<h2>Daniel Guillermo Perico Sánchez</h2>
-							<p>Industrial Engineer - Data Engineer.<br />
-							<!--Passionate about life and technology.<br />-->
-							Learning everyday.</p>
-						</header>
-						<span class="image"><img src="images/hv.jpeg" alt="" /></span>
-					</div>
-					<a href="#one" class="goto-next scrolly">Next</a>
-				</section>
+			<section id="banner">
+				<div class="content">
+					<header>
+						<h2>Daniel Guillermo Perico Sánchez</h2>
+						<p>Industrial Engineer | Data Engineer<br />
+						Building the future with data, one pipeline at a time.</p>
+					</header>
+					<span class="image"><img src="images/hv.jpeg" alt="Daniel Perico" /></span>
+				</div>
+				<a href="#about" class="goto-next scrolly">Next</a>
+			</section>
 
-			<!-- One -->
-				<section id="one" class="spotlight style1 bottom">
-					<span class="image fit main"><img src="images/night.jpg" alt="" /></span>
-					<div class="content">
-						<div class="container">
-							<div class="row">
-								<div class="col-4 col-12-medium">
-									<header>
-										<h2>Work profile</h2>
-										<p>Let me talk you about me...</p>
-									</header>
-								</div>
-								<div class="col-5 col-12-medium">
-									<p> I am a person with strong computer skills, I use programming as the tool that allows me to automate repetitive tasks 
-										and focus on the things that really matter. I make decisions based on the data, the advance analysis of the information 
-										is crucial to generate value in the projects in which I get involved. The path of education that I have had over the past 
-										few years has made me a person passionate about knowledge, I seek to learn something new every day, never stopping learning 
-										became a lifestyle for me.</p>
-								</div>
-								<div class="col-3 col-12-medium">
-								
+			<!-- About Section -->
+			<section id="about" class="modern-section">
+				<div class="container">
+					<header class="major">
+						<h2 style="color: #e2e8f0;">About Me</h2>
+						<p style="color: #94a3b8;">Passionate Data Engineer with a drive for innovation</p>
+					</header>
+					
+					<div class="row gtr-150">
+						<div class="col-8 col-12-medium">
+							<p>I am a passionate Data Engineer with strong technical skills who leverages programming as the primary tool to automate complex workflows and focus on what truly matters. My approach is data-driven - I believe that advanced analysis and intelligent interpretation of information is crucial for generating real value in every project I'm involved in.</p>
+							
+							<p>With a background in Industrial Engineering and specialized expertise in Data Engineering, I bridge the gap between business operations and cutting-edge technology. My experience spans across building robust data pipelines, implementing machine learning solutions, and creating scalable data architectures that drive business intelligence.</p>
+							
+							<div class="cta-buttons">
+								<a href="work-experience.html" class="modern-button">View My Experience</a>
+								<a href="data-machine.html" class="modern-button secondary">Data Science Projects</a>
+								<a href="chatbot.html" class="modern-button secondary">Ask My AI Assistant</a>
+							</div>
+						</div>
+						<div class="col-4 col-12-medium">
+							<div class="skills-grid" style="grid-template-columns: 1fr;">
+								<div class="skill-card">
+									<div class="skill-icon">
+										<i class="fa fa-database"></i>
+									</div>
+									<h3>Data Engineering</h3>
+									<p>Building scalable data pipelines and ETL processes for modern data architectures.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<a href="#two" class="goto-next scrolly">Next</a>
-				</section>
+				</div>
+			</section>
 
-			<!-- Two -->
-				<section id="two" class="spotlight style3 left">
-					<span class="image fit main bottom"><img src="images/machine_l.jpg" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>Data Science & Machine Learning Lover</h2>
-							<p>"Without data you're just another person with an opinion" - W. Edwars Deming</p>
-						</header>
-						<p>I've been studying for become a Data Scientist for almost two years now. In that time I've learn about python programming language as the 
-							main tool for do data science.Python libraries as pandas, numpy, seaborn,dash,scikit-learn,fastai and many more have become indispensable 
-							tools to obtain efficient results in every project I get envolved. </p>
-						<ul class="actions">
-							<li><a href="data-machine.html" class="button">Learn More</a></li>
-						</ul>
-					</div>
-					<a href="#three" class="goto-next scrolly">Next</a>
-				</section>
-			<!-- Three -->
-				<section id="three" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/ds4a.jpg" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>DS4A Program</h2>
-							<p>Student for the DS4A Colombia program</p>
-						</header>
-						<p>I was selected over 10.000+ applicants to participate on the Data Science for All Colombia program hosted by Correlation One and MinTic.</p>
-						<ul class="actions">
-							<li><a href="ds4a.html" class="button">Learn More</a></li>
-						</ul>
-					</div>
-					<a href="#four" class="goto-next scrolly">Next</a>
-				</section>
-			<!-- Four -->
-				<section id="four" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/corona.jpg" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>Professional experience</h2>
-							<p>Education and training - Organización Corona</p>
-						</header>
-						<p>I had the oportunity to work in the education and training pillar at Organización Corona,
-							there I was able to improve my comunication skills with every person that was involved in
-							the sanitary ware manufacturing process and also improve my analytical skills by participaring
-							in a waste reduction project.</p>
-						<ul class="actions">
-							<li><a href="work-experience.html" class="button">Learn More</a></li>
-						</ul>
-					</div>
-					<a href="#five" class="goto-next scrolly">Next</a>
-				</section>
-			<!-- Five -->
-				<section id="five" class="wrapper style1 special fade-up">
+			<!-- Skills Spotlight -->
+			<section class="spotlight modern style1 bottom">
+				<div class="content">
 					<div class="container">
 						<header class="major">
-							<h2>Hobbies</h2>
-							<p>I like to do different things in my free time...</p>
+							<h2 style="color: #e2e8f0;">Core Expertise</h2>
+							<p style="color: #94a3b8;">Technologies and skills I work with</p>
 						</header>
-						<div class="box alt">
-							<div class="row gtr-uniform">
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-futbol-o"></span>
-									<h3>Soccer</h3>
-									<p>I have played soccer since I was a child. It's my favorite sport.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-star"></span>
-									<h3>Astronomy</h3>
-									<p>Thinking about how small we are in the Universe give me goosebumps.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-terminal"></span>
-									<h3>Programming</h3>
-									<p>I find programming very fun. Eat,sleep,code,repeat.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-hand-peace-o"></span>
-									<h3>Meditation</h3>
-									<p>We all need to take a break from our tasks,breathe. Live in the Here & Now.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-desktop"></span>
-									<h3>Videogames</h3>
-									<p>I've been always fan of the video games. All the code behind them is awesome.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon alt major fa-book"></span>
-									<h3>Read</h3>
-									<p>Usually I read about anything that helps me to open my mind. See beyond.</p>
-								</section>
+						
+						<div class="skills-grid">
+							<div class="skill-card">
+								<div class="skill-icon">
+									<i class="fa fa-code"></i>
+								</div>
+								<h3>Programming</h3>
+								<p>Python, SQL, JavaScript, and modern programming paradigms for data processing and analysis.</p>
+							</div>
+							
+							<div class="skill-card">
+								<div class="skill-icon">
+									<i class="fa fa-cloud"></i>
+								</div>
+								<h3>Cloud Platforms</h3>
+								<p>AWS, Azure, and GCP for scalable data infrastructure and cloud-native solutions.</p>
+							</div>
+							
+							<div class="skill-card">
+								<div class="skill-icon">
+									<i class="fa fa-cogs"></i>
+								</div>
+								<h3>Data Tools</h3>
+								<p>Apache Spark, Kafka, Airflow, and modern data stack technologies for enterprise solutions.</p>
+							</div>
+							
+							<div class="skill-card">
+								<div class="skill-icon">
+									<i class="fa fa-brain"></i>
+								</div>
+								<h3>Machine Learning</h3>
+								<p>MLOps, model deployment, and AI integration for intelligent data-driven applications.</p>
+							</div>
+							
+							<div class="skill-card">
+								<div class="skill-icon">
+									<i class="fa fa-chart-line"></i>
+								</div>
+								<h3>Analytics</h3>
+								<p>Advanced data analysis, visualization, and business intelligence for actionable insights.</p>
+							</div>
+							
+							<div class="skill-card">
+								<div class="skill-icon">
+									<i class="fa fa-shield"></i>
+								</div>
+								<h3>Data Governance</h3>
+								<p>Data quality, security, and compliance frameworks for enterprise data management.</p>
 							</div>
 						</div>
-						<footer class="major">
-							<!--<ul class="actions special">
-								<li><a href="#" class="button">Magna sed feugiat</a></li>
-							</ul>-->
-						</footer>
 					</div>
-				</section>
+				</div>
+			</section>
 
-			<!-- Five -->
-				<!--<section id="five" class="wrapper style2 special fade">
-					<div class="container">
-						<header>
-							<h2>Magna faucibus lorem diam</h2>
-							<p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
-						</header>
-						<form method="post" action="#" class="cta">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-								<div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
-							</div>
-						</form>
+			<!-- Professional Journey -->
+			<section class="modern-section">
+				<div class="container">
+					<header class="major">
+						<h2 style="color: #e2e8f0;">Professional Journey</h2>
+						<p style="color: #94a3b8;">From Industrial Engineering to Data Engineering excellence</p>
+					</header>
+					
+					<div class="row gtr-150">
+						<div class="col-6 col-12-medium">
+							<h3>🚀 Current Focus</h3>
+							<p>Currently working as a Data Engineer, I specialize in building robust data infrastructure that enables organizations to make data-driven decisions. My work involves designing and implementing scalable data pipelines, optimizing database performance, and ensuring data quality across complex systems.</p>
+						</div>
+						<div class="col-6 col-12-medium">
+							<h3>🎯 Goals & Vision</h3>
+							<p>I'm passionate about leveraging emerging technologies like AI and machine learning to solve real-world problems. My goal is to continue growing in the data engineering field while contributing to innovative projects that make a meaningful impact.</p>
+						</div>
 					</div>
-				</section>-->
+					
+					<div class="cta-buttons">
+						<a href="work-experience.html" class="modern-button">Detailed Work History</a>
+						<a href="data-machine.html" class="modern-button secondary">View Projects</a>
+					</div>
+				</div>
+			</section>
 
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/danielpesa7" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/danielpesa7" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-							<li><a class="icon alt fa-envelope"><span class="label">Email</span></a>  contacto@danielperico.com</li>
-							<!--<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>-->
-					</ul>
-					<ul class="copyright">
-						<li>&copy; DPerico. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/danielpesa7" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/danielpesa7" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a class="icon alt fa-envelope"><span class="label">Email</span></a> contacto@danielperico.com</li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; DPerico. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
 
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.34.2/gradio.js"></script>
-			
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
