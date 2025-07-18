@@ -1,0 +1,523 @@
+<!DOCTYPE HTML>
+<!--
+	Technical Skills - Daniel Perico
+	Modern beach-inspired design showcasing technical expertise
+-->
+<html>
+	<head>
+		<title>Technical Skills - Daniel Perico</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Beach-inspired modern styling */
+			.ocean-gradient {
+				background: linear-gradient(135deg, #0c1222 0%, #1a1f3a 25%, #2d3748 50%, #3182ce 75%, #4299e1 100%);
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.ocean-gradient::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: 
+					radial-gradient(circle at 25% 75%, rgba(56, 178, 172, 0.15) 0%, transparent 50%),
+					radial-gradient(circle at 75% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+					radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+				animation: oceanWave 15s ease-in-out infinite;
+			}
+			
+			@keyframes oceanWave {
+				0%, 100% { transform: translateY(0px) scale(1); }
+				33% { transform: translateY(-20px) scale(1.02); }
+				66% { transform: translateY(-10px) scale(0.98); }
+			}
+			
+			.skills-container {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 2rem;
+				margin: 3rem 0;
+			}
+			
+			.skill-category {
+				background: rgba(15, 23, 42, 0.95);
+				backdrop-filter: blur(20px);
+				border-radius: 25px;
+				padding: 2rem;
+				box-shadow: 
+					0 25px 50px -12px rgba(0, 0, 0, 0.4),
+					0 0 0 1px rgba(59, 130, 246, 0.1);
+				border-top: 4px solid;
+				border-image: linear-gradient(90deg, #3b82f6, #22c55e, #a855f7, #f59e0b) 1;
+				transition: all 0.3s ease;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.skill-category::before {
+				content: '';
+				position: absolute;
+				top: -50%;
+				left: -50%;
+				width: 200%;
+				height: 200%;
+				background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+				animation: shimmer 8s ease-in-out infinite;
+				z-index: 0;
+			}
+			
+			@keyframes shimmer {
+				0%, 100% { transform: rotate(0deg); }
+				50% { transform: rotate(180deg); }
+			}
+			
+			.skill-category > * {
+				position: relative;
+				z-index: 1;
+			}
+			
+			.skill-category:hover {
+				transform: translateY(-15px);
+				box-shadow: 
+					0 35px 70px -15px rgba(0, 0, 0, 0.5),
+					0 0 0 1px rgba(59, 130, 246, 0.3);
+			}
+			
+			.category-icon {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+				display: block;
+				text-align: center;
+			}
+			
+			.programming { color: #3b82f6; }
+			.data-tools { color: #22c55e; }
+			.cloud { color: #a855f7; }
+			.databases { color: #f59e0b; }
+			.devops { color: #ef4444; }
+			.visualization { color: #14b8a6; }
+			.ai-ml { color: #8b5cf6; }
+			.general { color: #f97316; }
+			
+			.skill-category h3 {
+				color: #e2e8f0;
+				text-align: center;
+				margin-bottom: 1.5rem;
+				font-size: 1.5rem;
+				font-weight: 600;
+			}
+			
+			.skill-list {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				justify-content: center;
+			}
+			
+			.skill-item {
+				background: rgba(59, 130, 246, 0.1);
+				color: #e2e8f0;
+				padding: 0.6rem 1rem;
+				border-radius: 20px;
+				font-size: 0.9rem;
+				font-weight: 500;
+				border: 1px solid rgba(59, 130, 246, 0.2);
+				transition: all 0.3s ease;
+				cursor: default;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.skill-item::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+				transition: left 0.5s ease;
+			}
+			
+			.skill-item:hover {
+				background: rgba(59, 130, 246, 0.2);
+				transform: translateY(-3px) scale(1.05);
+				box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.3);
+			}
+			
+			.skill-item:hover::before {
+				left: 100%;
+			}
+			
+			/* Proficiency levels */
+			.expert { 
+				background: rgba(34, 197, 94, 0.2);
+				border-color: rgba(34, 197, 94, 0.4);
+				color: #86efac;
+			}
+			.expert:hover { 
+				background: rgba(34, 197, 94, 0.3);
+				box-shadow: 0 10px 20px -5px rgba(34, 197, 94, 0.4);
+			}
+			
+			.advanced { 
+				background: rgba(59, 130, 246, 0.2);
+				border-color: rgba(59, 130, 246, 0.4);
+				color: #93c5fd;
+			}
+			.advanced:hover { 
+				background: rgba(59, 130, 246, 0.3);
+				box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
+			}
+			
+			.intermediate { 
+				background: rgba(168, 85, 247, 0.2);
+				border-color: rgba(168, 85, 247, 0.4);
+				color: #c4b5fd;
+			}
+			.intermediate:hover { 
+				background: rgba(168, 85, 247, 0.3);
+				box-shadow: 0 10px 20px -5px rgba(168, 85, 247, 0.4);
+			}
+			
+			.proficiency-legend {
+				background: rgba(15, 23, 42, 0.95);
+				backdrop-filter: blur(20px);
+				border-radius: 20px;
+				padding: 1.5rem;
+				margin: 2rem 0;
+				text-align: center;
+				border: 1px solid rgba(59, 130, 246, 0.2);
+			}
+			
+			.legend-items {
+				display: flex;
+				justify-content: center;
+				gap: 2rem;
+				flex-wrap: wrap;
+				margin-top: 1rem;
+			}
+			
+			.legend-item {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			
+			.legend-dot {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+			}
+			
+			.certifications-showcase {
+				background: rgba(15, 23, 42, 0.95);
+				backdrop-filter: blur(20px);
+				border-radius: 25px;
+				padding: 2rem;
+				margin: 3rem 0;
+				text-align: center;
+				border: 1px solid rgba(34, 197, 94, 0.3);
+			}
+			
+			.cert-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1rem;
+				margin-top: 1.5rem;
+			}
+			
+			.cert-badge {
+				background: rgba(34, 197, 94, 0.1);
+				color: #86efac;
+				padding: 1rem;
+				border-radius: 15px;
+				border: 1px solid rgba(34, 197, 94, 0.3);
+				transition: all 0.3s ease;
+			}
+			
+			.cert-badge:hover {
+				transform: translateY(-5px);
+				background: rgba(34, 197, 94, 0.2);
+			}
+			
+			/* Responsive design */
+			@media (max-width: 768px) {
+				.skills-container {
+					grid-template-columns: 1fr;
+					gap: 1.5rem;
+				}
+				.skill-category {
+					padding: 1.5rem;
+				}
+				.legend-items {
+					gap: 1rem;
+				}
+				.cert-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="index.html">Daniel Perico</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a href="#">Navigate</a>
+							<ul>
+								<li><a href="work-experience.html">Work Experience</a></li>
+								<li><a href="skills-page.html" class="current">Technical Skills</a></li>
+								<li><a href="ds4a.html">Data Science & AI</a></li>
+								<li><a href="chatbot.html">Converse with my Personal Bot 🤖</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+			<div id="main" class="wrapper ocean-gradient">
+				<div class="container">
+					<header class="major">
+						<h2>Technical Expertise</h2>
+						<p>Comprehensive skill set spanning the entire data engineering ecosystem</p>
+					</header>
+
+					<!-- Proficiency Legend -->
+					<div class="proficiency-legend">
+						<h3>Proficiency Levels</h3>
+						<div class="legend-items">
+							<div class="legend-item">
+								<div class="legend-dot" style="background: #86efac;"></div>
+								<span style="color: #86efac;">Expert</span>
+							</div>
+							<div class="legend-item">
+								<div class="legend-dot" style="background: #93c5fd;"></div>
+								<span style="color: #93c5fd;">Advanced</span>
+							</div>
+							<div class="legend-item">
+								<div class="legend-dot" style="background: #c4b5fd;"></div>
+								<span style="color: #c4b5fd;">Intermediate</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Skills Grid -->
+					<div class="skills-container">
+						
+						<!-- Programming Languages -->
+						<div class="skill-category">
+							<span class="category-icon programming">👨‍💻</span>
+							<h3>Programming Languages</h3>
+							<div class="skill-list">
+								<span class="skill-item expert">Python</span>
+								<span class="skill-item expert">T-SQL</span>
+								<span class="skill-item expert">SQL</span>
+								<span class="skill-item advanced">Bash Scripting</span>
+								<span class="skill-item intermediate">C#</span>
+								<span class="skill-item intermediate">DAX</span>
+							</div>
+						</div>
+
+						<!-- Data Engineering Tools -->
+						<div class="skill-category">
+							<span class="category-icon data-tools">⚙️</span>
+							<h3>Data Engineering Tools</h3>
+							<div class="skill-list">
+								<span class="skill-item expert">PySpark</span>
+								<span class="skill-item expert">Spark SQL</span>
+								<span class="skill-item expert">DBT (Data Build Tool)</span>
+								<span class="skill-item expert">SSIS</span>
+								<span class="skill-item advanced">ETL/ELT Processes</span>
+								<span class="skill-item advanced">Data Pipelines</span>
+								<span class="skill-item advanced">Data Migration</span>
+							</div>
+						</div>
+
+						<!-- Cloud Platforms & Services -->
+						<div class="skill-category">
+							<span class="category-icon cloud">☁️</span>
+							<h3>Cloud Platforms</h3>
+							<div class="skill-list">
+								<span class="skill-item expert">Microsoft Azure</span>
+								<span class="skill-item expert">Azure Data Factory</span>
+								<span class="skill-item expert">Azure Synapse</span>
+								<span class="skill-item expert">Databricks</span>
+								<span class="skill-item expert">Microsoft Fabric</span>
+								<span class="skill-item advanced">Azure Functions</span>
+								<span class="skill-item advanced">Blob Storage</span>
+								<span class="skill-item advanced">Logic Apps</span>
+								<span class="skill-item intermediate">AWS</span>
+							</div>
+						</div>
+
+						<!-- Databases & Storage -->
+						<div class="skill-category">
+							<span class="category-icon databases">🗄️</span>
+							<h3>Databases & Storage</h3>
+							<div class="skill-list">
+								<span class="skill-item expert">Snowflake</span>
+								<span class="skill-item expert">SQL Server</span>
+								<span class="skill-item expert">PostgreSQL</span>
+								<span class="skill-item advanced">Delta Lake</span>
+								<span class="skill-item advanced">Data Warehousing</span>
+								<span class="skill-item advanced">Lakehouse Architecture</span>
+								<span class="skill-item intermediate">NoSQL</span>
+							</div>
+						</div>
+
+						<!-- DevOps & Version Control -->
+						<div class="skill-category">
+							<span class="category-icon devops">🔧</span>
+							<h3>DevOps & Tools</h3>
+							<div class="skill-list">
+								<span class="skill-item expert">Git</span>
+								<span class="skill-item expert">GitHub</span>
+								<span class="skill-item advanced">Azure Pipelines</span>
+								<span class="skill-item advanced">CI/CD</span>
+								<span class="skill-item advanced">GitHub Actions</span>
+								<span class="skill-item intermediate">Jenkins</span>
+								<span class="skill-item intermediate">Docker</span>
+								<span class="skill-item intermediate">Terraform</span>
+							</div>
+						</div>
+
+						<!-- Data Visualization -->
+						<div class="skill-category">
+							<span class="category-icon visualization">📊</span>
+							<h3>Visualization & BI</h3>
+							<div class="skill-list">
+								<span class="skill-item expert">Power BI</span>
+								<span class="skill-item expert">Power Pivot</span>
+								<span class="skill-item expert">SSRS</span>
+								<span class="skill-item advanced">Databricks Dashboards</span>
+								<span class="skill-item intermediate">Tableau</span>
+								<span class="skill-item intermediate">Matplotlib</span>
+								<span class="skill-item intermediate">Seaborn</span>
+							</div>
+						</div>
+
+						<!-- AI/ML Technologies -->
+						<div class="skill-category">
+							<span class="category-icon ai-ml">🤖</span>
+							<h3>AI & Machine Learning</h3>
+							<div class="skill-list">
+								<span class="skill-item expert">OpenAI API</span>
+								<span class="skill-item expert">Generative AI</span>
+								<span class="skill-item advanced">Scikit-learn</span>
+								<span class="skill-item advanced">Pandas</span>
+								<span class="skill-item intermediate">PyTorch</span>
+								<span class="skill-item intermediate">Fast.ai</span>
+								<span class="skill-item intermediate">Machine Learning</span>
+								<span class="skill-item intermediate">Data Science</span>
+							</div>
+						</div>
+
+						<!-- Development Environment -->
+						<div class="skill-category">
+							<span class="category-icon general">💻</span>
+							<h3>Development & OS</h3>
+							<div class="skill-list">
+								<span class="skill-item expert">Visual Studio Code</span>
+								<span class="skill-item expert">Jupyter Notebooks</span>
+								<span class="skill-item expert">Windows</span>
+								<span class="skill-item advanced">Linux/Ubuntu</span>
+								<span class="skill-item advanced">Visual Studio</span>
+								<span class="skill-item intermediate">MacOS</span>
+								<span class="skill-item intermediate">Arch Linux</span>
+								<span class="skill-item intermediate">Web Scraping</span>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- Certifications -->
+					<div class="certifications-showcase">
+						<h3>🏆 Professional Certifications</h3>
+						<p>Industry-recognized credentials validating expertise</p>
+						
+						<div class="cert-grid">
+							<div class="cert-badge">
+								<h4>Microsoft DP-700</h4>
+								<p>Fabric Data Engineer Associate</p>
+							</div>
+							<div class="cert-badge">
+								<h4>Azure Data Engineer Associate</h4>
+								<p>Microsoft Certified</p>
+							</div>
+							<div class="cert-badge">
+								<h4>Azure Data Fundamentals</h4>
+								<p>Microsoft Certified</p>
+							</div>
+							<div class="cert-badge">
+								<h4>Azure Fundamentals</h4>
+								<p>Microsoft Certified</p>
+							</div>
+							<div class="cert-badge">
+								<h4>Data Science for All</h4>
+								<p>Correlation One - Fall 2019</p>
+							</div>
+							<div class="cert-badge">
+								<h4>Data Engineering with Python</h4>
+								<p>DataCamp Career Track</p>
+							</div>
+							<div class="cert-badge">
+								<h4>Data Science with Python</h4>
+								<p>DataCamp Career Track</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Methodologies -->
+					<div class="skill-category" style="margin: 3rem 0;">
+						<span class="category-icon general">📋</span>
+						<h3>Methodologies & Approaches</h3>
+						<div class="skill-list">
+							<span class="skill-item expert">Agile Development</span>
+							<span class="skill-item expert">Scrum</span>
+							<span class="skill-item expert">Kanban</span>
+							<span class="skill-item advanced">Performance Optimization</span>
+							<span class="skill-item advanced">Data Quality Assurance</span>
+							<span class="skill-item advanced">Statistical Analysis</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/danielpesa7" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/danielpesa7" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a class="icon alt fa-envelope"><span class="label">Email</span></a> contacto@danielperico.com</li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; DPerico. All rights reserved.</li><li>Design: Modern Ocean Theme</li>
+				</ul>
+			</footer>
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

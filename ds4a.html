@@ -1,190 +1,517 @@
 <!DOCTYPE HTML>
 <!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	DS4A Colombia - Daniel Perico
+	Modern beach-inspired design showcasing data science education journey
 -->
 <html>
 	<head>
-		<title>DS4A Colombia</title>
+		<title>Data Science for All Colombia - Daniel Perico</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Beach-inspired modern styling */
+			.learning-gradient {
+				background: linear-gradient(135deg, #0f1419 0%, #1a2332 25%, #2d3748 50%, #3182ce 75%, #4299e1 100%);
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.learning-gradient::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: 
+					radial-gradient(circle at 30% 70%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
+					radial-gradient(circle at 70% 30%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+					radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+				animation: learningWave 18s ease-in-out infinite;
+			}
+			
+			@keyframes learningWave {
+				0%, 100% { transform: translateY(0px) rotate(0deg); }
+				25% { transform: translateY(-12px) rotate(1deg); }
+				50% { transform: translateY(-20px) rotate(-0.5deg); }
+				75% { transform: translateY(-8px) rotate(0.8deg); }
+			}
+			
+			.program-showcase {
+				background: rgba(15, 23, 42, 0.95);
+				backdrop-filter: blur(20px);
+				border-radius: 25px;
+				padding: 3rem;
+				margin: 3rem 0;
+				text-align: center;
+				border: 1px solid rgba(99, 102, 241, 0.3);
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.program-showcase::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 4px;
+				background: linear-gradient(90deg, #6366f1, #22c55e, #f59e0b, #ef4444);
+				opacity: 0.9;
+			}
+			
+			.program-stats {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+				gap: 1.5rem;
+				margin: 2rem 0;
+			}
+			
+			.stat-item {
+				background: rgba(30, 41, 59, 0.8);
+				padding: 1.5rem;
+				border-radius: 15px;
+				text-align: center;
+				border: 1px solid rgba(99, 102, 241, 0.2);
+				transition: all 0.3s ease;
+			}
+			
+			.stat-item:hover {
+				transform: translateY(-8px);
+				box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.3);
+			}
+			
+			.stat-number {
+				font-size: 2.2rem;
+				font-weight: 700;
+				color: #a78bfa;
+				display: block;
+			}
+			
+			.stat-label {
+				color: #cbd5e1;
+				font-size: 0.9rem;
+				margin-top: 0.5rem;
+			}
+			
+			.content-card {
+				background: rgba(15, 23, 42, 0.95);
+				backdrop-filter: blur(20px);
+				border-radius: 20px;
+				padding: 2.5rem;
+				margin: 2rem 0;
+				box-shadow: 
+					0 20px 25px -5px rgba(0, 0, 0, 0.3),
+					0 10px 10px -5px rgba(0, 0, 0, 0.2);
+				border: 1px solid rgba(34, 197, 94, 0.2);
+				transition: all 0.3s ease;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.content-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 3px;
+				background: linear-gradient(90deg, #22c55e, #3b82f6, #a855f7);
+				opacity: 0.8;
+			}
+			
+			.content-card:hover {
+				transform: translateY(-8px);
+				box-shadow: 
+					0 25px 50px -12px rgba(0, 0, 0, 0.4),
+					0 0 0 1px rgba(34, 197, 94, 0.3);
+			}
+			
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 2rem;
+				margin: 2rem 0;
+			}
+			
+			.skill-category-mini {
+				background: rgba(30, 41, 59, 0.9);
+				border-radius: 15px;
+				padding: 1.5rem;
+				border: 1px solid rgba(59, 130, 246, 0.2);
+				transition: all 0.3s ease;
+			}
+			
+			.skill-category-mini:hover {
+				transform: translateY(-5px);
+				border-color: rgba(59, 130, 246, 0.4);
+			}
+			
+			.skill-category-mini h4 {
+				color: #60a5fa;
+				margin-bottom: 1rem;
+				font-size: 1.1rem;
+			}
+			
+			.skill-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+			}
+			
+			.skill-tag-mini {
+				background: rgba(59, 130, 246, 0.15);
+				color: #93c5fd;
+				padding: 0.4rem 0.8rem;
+				border-radius: 20px;
+				font-size: 0.8rem;
+				font-weight: 500;
+				border: 1px solid rgba(59, 130, 246, 0.3);
+				transition: all 0.2s ease;
+			}
+			
+			.skill-tag-mini:hover {
+				background: rgba(59, 130, 246, 0.25);
+				transform: scale(1.05);
+			}
+			
+			.timeline-section {
+				position: relative;
+				margin: 3rem 0;
+			}
+			
+			.timeline-item {
+				display: flex;
+				align-items: flex-start;
+				margin: 2rem 0;
+				position: relative;
+			}
+			
+			.timeline-marker {
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: linear-gradient(135deg, #3b82f6, #a855f7);
+				margin-right: 2rem;
+				margin-top: 0.5rem;
+				flex-shrink: 0;
+				box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+			}
+			
+			.timeline-content {
+				flex: 1;
+				background: rgba(30, 41, 59, 0.8);
+				padding: 1.5rem;
+				border-radius: 15px;
+				border: 1px solid rgba(59, 130, 246, 0.2);
+			}
+			
+			.impact-showcase {
+				background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(59, 130, 246, 0.1));
+				border: 1px solid rgba(34, 197, 94, 0.3);
+				border-radius: 20px;
+				padding: 2rem;
+				margin: 3rem 0;
+				text-align: center;
+			}
+			
+			.impact-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1.5rem;
+				margin-top: 2rem;
+			}
+			
+			.impact-card {
+				background: rgba(15, 23, 42, 0.8);
+				padding: 1.5rem;
+				border-radius: 15px;
+				border: 1px solid rgba(34, 197, 94, 0.2);
+				transition: all 0.3s ease;
+			}
+			
+			.impact-card:hover {
+				transform: translateY(-5px);
+				background: rgba(15, 23, 42, 0.95);
+			}
+			
+			.impact-icon {
+				font-size: 2rem;
+				margin-bottom: 1rem;
+				display: block;
+			}
+			
+			/* Responsive design */
+			@media (max-width: 768px) {
+				.program-showcase {
+					padding: 2rem;
+				}
+				.content-card {
+					padding: 1.5rem;
+				}
+				.skills-grid {
+					grid-template-columns: 1fr;
+				}
+				.program-stats {
+					grid-template-columns: repeat(2, 1fr);
+				}
+				.timeline-item {
+					flex-direction: column;
+				}
+				.timeline-marker {
+					margin-right: 0;
+					margin-bottom: 1rem;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
-		<div id="page-wrapper"></div>
+		<div id="page-wrapper">
 
 			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a></a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#">Navigate</a>
-								<ul>
-									<li><a href="work-experience.html">Work experience</a></li>
-									<li><a href="data-machine.html">Data Science & AI</a></li>
-									<li><a href="titanic.html">Prediction Demo</a></li>
-									<li><a href="chatbot.html" class="current">Converse with my Personal Bot 🤖</a></li>
-									<!--<li><a href="no-sidebar.html">No Sidebar</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option 1</a></li>
-											<li><a href="#">Option 2</a></li>
-											<li><a href="#">Option 3</a></li>
-											<li><a href="#">Option 4</a></li>
-										</ul>
-									</li>-->
-								</ul>
-							</li>
-							<!--<li><a href="elements.html">Elements</a></li>
-							<li><a href="#" class="button primary">Sign Up</a></li>-->
-						</ul>
-					</nav>
-				</header>
+			<header id="header">
+				<h1 id="logo"><a href="index.html">Daniel Perico</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a href="#">Navigate</a>
+							<ul>
+								<li><a href="work-experience.html">Work Experience</a></li>
+								<li><a href="skills-page.html">Technical Skills</a></li>
+								<li><a href="ds4a.html" class="current">Data Science & AI</a></li>
+								<li><a href="chatbot.html">Converse with my Personal Bot 🤖</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
 
 			<!-- Main -->
-				<div id="main" class="wrapper style1">
-					<div class="container">
-						<header class="major">
-							<h2>Data Science for All Colombia (DS4A)</h2>
-							<p>Data Science train program</p>
-						</header>
-						<div class="row gtr-150">
-							<div class="col-4 col-12-medium">
+			<div id="main" class="wrapper learning-gradient">
+				<div class="container">
+					<header class="major">
+						<h2>Data Science for All Colombia (DS4A)</h2>
+						<p>A transformative journey into the world of data science and analytics</p>
+					</header>
 
-								<!-- Sidebar -->
-									<section id="sidebar">
-										<section>
-											<h3>The Experience</h3>
-											<p>The DS4A program was one of the best experiences I have had on the Data Science field. I learned a lot in those 10 weeks, having a Harvard's
-												teacher and beeing with the best colombian talent shown me how to solve real Data Science problems with real data.
-											</p>
-											<footer>
-												<ul class="actions">
-													<!--<li><a href="#" class="button">Learn More</a></li>-->
-												</ul>
-											</footer>
-										</section>
-										<hr />
-										<section>
-											<a class="image fit"><img src="images/ds4a_awesome.png" alt="" /></a>
-											<!--<footer>
-												<ul class="actions">
-													<li><a class="button">Learn More</a></li>
-												</ul>
-											</footer>-->
-										</section>
-
+					<!-- Program Showcase -->
+					<div class="program-showcase">
+						<h3>🎓 Elite Data Science Training Program</h3>
+						<p>DS4A Colombia represents one of Latin America's most prestigious data science education initiatives, designed to democratize access to world-class data science education and build diverse communities of data professionals across the region.</p>
+						
+						<div class="program-stats">
+							<div class="stat-item">
+								<span class="stat-number">10</span>
+								<div class="stat-label">Intensive Weeks</div>
 							</div>
-							<div class="col-8 col-12-medium imp-medium">
-
-								<!-- Content -->
-									<section id="content">
-										<a class="image fit"><img src="images/ds4a_resume_page.jpg" alt="" /></a>
-										<h3>What I learned...</h3>
-										<p>In the DS4A program I learned hard skills like: </p>
-										<ul>
-											<li>Use python efficiently to perform ETL processes.</li>
-											<li>Reinforce learning about SQL and how to have a PostgreSQL database on the cloud (AWS).</li>
-											<li>Use visualization tools like matplotlib, seaborn and dash to look the data and have a best idea of it's behavior and meaning.</li>
-											<li>To use robust statistical methods to find correlation and causilities from the data.</li>
-											<li>To know about different machine learning algorithms and realize which is the best model to perform a certain task.</li>
-										  </ul> 
-										<p>Also I had the opportunity to reinforce some soft skills like: </p>
-										<ul>
-											<li>Asking the right questions.</li>
-											<li>Address different types of problems with a scientific methodology.</li>
-											<li>Assertive communication with coworkers with different professional backgrounds.</li>
-											<li>Team work with high pressure deadlines.</li>
-											<li>Teaching others.</li>
-										  </ul> 
-										<!--<h3>Sed Magna Ornare</h3>
-										<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
-										<ul>
-											<li>Faucibus orci lobortis ac adipiscing integer.</li>
-											<li>Col accumsan arcu mi aliquet placerat.</li>
-											<li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-											<li>Blandit massa non blandit tempor interdum.</li>
-											<li>Lacinia mattis arcu nascetur lobortis.</li>
-										</ul>-->
-									</section>
-
+							<div class="stat-item">
+								<span class="stat-number">Harvard</span>
+								<div class="stat-label">Faculty</div>
 							</div>
-							<div class="container">
-								<header class="major">
-									<h2>Final Project</h2>
-									<p>In the DS4A program we had to present a final project. It had to be a product that helps with the solution of an specific problems 
-										that people were having in the colombian context.</p>
-								</header>
-		
-								<!-- Content -->
-									<section id="content">
-										<a href="#" class="image fit"><img src="images/dashboard_overview.jpg" alt="" /></a>
-										<h3>About the project</h3>
-										<p>My team and I did a deep analysis of the inequality in Colombia. We made an interactive dashboard to see the main causes of 
-											social inequality based on the DANE 2018 population census, containing variables such as working status, education, 
-											marital status, number of children, healthcare, geographic and location to perform a non-supervised clustering technique (K-Means) to cluster 
-											all colombian municipalities (1122) into just 5 clusters.</p>
-										<a href="#" class="image fit"><img src="images/dashboard_graphs.jpg" alt="" /></a>
-										<p>It was an ambitious project. Performing querys efficently on a 45+ million rows database was difficult. Using python and dash 
-											to create an interactive dashboard that shown the insights we found was exciting.Having the dashboard and the database on the 
-											cloud and being accesible from anywhere in the web was amazing. It was an astonishing experience.
-										</p>
-										<p>You can find the repository of the project <b><a href="https://github.com/danielpesa7/DS4A_Project"> Here! </a></b></p>
-										<!--<ul>
-											<li>Faucibus orci lobortis ac adipiscing integer.</li>
-											<li>Col accumsan arcu mi aliquet placerat.</li>
-											<li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-											<li>Blandit massa non blandit tempor interdum.</li>
-											<li>Lacinia mattis arcu nascetur lobortis.</li>
-										</ul>-->
-										<iframe
-	src="https://danielpesa-career-conversation.hf.space"
-	frameborder="0"
-	width="850"
-	height="450"
-></iframe>
-
-									</section>
-		
+							<div class="stat-item">
+								<span class="stat-number">Colombia</span>
+								<div class="stat-label">Top Talent</div>
+							</div>
+							<div class="stat-item">
+								<span class="stat-number">2019</span>
+								<div class="stat-label">Fall Cohort</div>
 							</div>
 						</div>
 					</div>
+
+					<!-- Experience Overview -->
+					<div class="content-card">
+						<h3>🌟 The Transformative Experience</h3>
+						<p>The DS4A program marked a pivotal moment in my professional development, providing an intensive deep-dive into practical data science applications. Working alongside Colombia's brightest data minds under the guidance of Harvard faculty, I gained invaluable experience solving real-world problems with authentic industry datasets.</p>
+						
+						<p>This program didn't just teach theoretical concepts—it immersed participants in the complete data science workflow, from problem formulation and data acquisition to model deployment and business impact assessment. The collaborative environment fostered by bringing together diverse professionals from different industries created a unique learning ecosystem that mirrors real-world data science teams.</p>
+					</div>
+
+					<!-- Skills Development Timeline -->
+					<div class="content-card">
+						<h3>📈 Learning Journey & Skill Development</h3>
+						<div class="timeline-section">
+							<div class="timeline-item">
+								<div class="timeline-marker"></div>
+								<div class="timeline-content">
+									<h4>Foundations & Statistical Analysis</h4>
+									<p>Mastered advanced statistical methods, hypothesis testing, and correlation analysis. Learned to identify causalities and patterns in complex datasets using robust statistical frameworks.</p>
+								</div>
+							</div>
+							
+							<div class="timeline-item">
+								<div class="timeline-marker"></div>
+								<div class="timeline-content">
+									<h4>Machine Learning & Algorithms</h4>
+									<p>Gained hands-on experience with various ML algorithms, learning to select optimal models for specific tasks and understanding the trade-offs between different approaches.</p>
+								</div>
+							</div>
+							
+							<div class="timeline-item">
+								<div class="timeline-marker"></div>
+								<div class="timeline-content">
+									<h4>Data Engineering & ETL</h4>
+									<p>Developed proficiency in ETL processes using Python, learning to efficiently clean, transform, and prepare data for analysis and modeling.</p>
+								</div>
+							</div>
+							
+							<div class="timeline-item">
+								<div class="timeline-marker"></div>
+								<div class="timeline-content">
+									<h4>Visualization & Communication</h4>
+									<p>Mastered data storytelling using matplotlib, seaborn, and dash, learning to communicate complex insights to both technical and non-technical stakeholders.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Technical Skills Acquired -->
+					<div class="content-card">
+						<h3>🛠️ Technical Skills Mastered</h3>
+						<div class="skills-grid">
+							<div class="skill-category-mini">
+								<h4>Data Manipulation & Analysis</h4>
+								<div class="skill-tags">
+									<span class="skill-tag-mini">Python</span>
+									<span class="skill-tag-mini">Pandas</span>
+									<span class="skill-tag-mini">NumPy</span>
+									<span class="skill-tag-mini">ETL Processes</span>
+								</div>
+							</div>
+							
+							<div class="skill-category-mini">
+								<h4>Database & Cloud Technologies</h4>
+								<div class="skill-tags">
+									<span class="skill-tag-mini">PostgreSQL</span>
+									<span class="skill-tag-mini">AWS</span>
+									<span class="skill-tag-mini">Cloud Databases</span>
+									<span class="skill-tag-mini">SQL Optimization</span>
+								</div>
+							</div>
+							
+							<div class="skill-category-mini">
+								<h4>Data Visualization</h4>
+								<div class="skill-tags">
+									<span class="skill-tag-mini">Matplotlib</span>
+									<span class="skill-tag-mini">Seaborn</span>
+									<span class="skill-tag-mini">Dash</span>
+									<span class="skill-tag-mini">Data Storytelling</span>
+								</div>
+							</div>
+							
+							<div class="skill-category-mini">
+								<h4>Machine Learning</h4>
+								<div class="skill-tags">
+									<span class="skill-tag-mini">Scikit-learn</span>
+									<span class="skill-tag-mini">Model Selection</span>
+									<span class="skill-tag-mini">Algorithm Optimization</span>
+									<span class="skill-tag-mini">Performance Evaluation</span>
+								</div>
+							</div>
+							
+							<div class="skill-category-mini">
+								<h4>Statistical Methods</h4>
+								<div class="skill-tags">
+									<span class="skill-tag-mini">Hypothesis Testing</span>
+									<span class="skill-tag-mini">Correlation Analysis</span>
+									<span class="skill-tag-mini">Statistical Modeling</span>
+									<span class="skill-tag-mini">Causality Detection</span>
+								</div>
+							</div>
+							
+							<div class="skill-category-mini">
+								<h4>Soft Skills Development</h4>
+								<div class="skill-tags">
+									<span class="skill-tag-mini">Scientific Methodology</span>
+									<span class="skill-tag-mini">Team Collaboration</span>
+									<span class="skill-tag-mini">Problem Solving</span>
+									<span class="skill-tag-mini">Knowledge Transfer</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Program Impact -->
+					<div class="impact-showcase">
+						<h3>🚀 Long-term Impact & Career Transformation</h3>
+						<p>The DS4A experience served as a catalyst for my evolution from industrial engineering into the specialized field of data engineering, providing both technical foundations and professional networks that continue to influence my career.</p>
+						
+						<div class="impact-grid">
+							<div class="impact-card">
+								<span class="impact-icon">🎯</span>
+								<h4>Career Acceleration</h4>
+								<p>Directly led to my transition into data engineering roles at leading technology companies</p>
+							</div>
+							
+							<div class="impact-card">
+								<span class="impact-icon">🌐</span>
+								<h4>Global Perspective</h4>
+								<p>Gained international outlook on data science applications and best practices</p>
+							</div>
+							
+							<div class="impact-card">
+								<span class="impact-icon">🤝</span>
+								<h4>Professional Network</h4>
+								<p>Built lasting connections with Colombia's top data science professionals and Harvard faculty</p>
+							</div>
+							
+							<div class="impact-card">
+								<span class="impact-icon">🏗️</span>
+								<h4>Foundation Building</h4>
+								<p>Established core competencies that I apply daily in enterprise data engineering projects</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Key Achievements -->
+					<div class="content-card">
+						<h3>🏆 Key Achievements & Learnings</h3>
+						<ul style="color: #e2e8f0; line-height: 1.8; font-size: 1.1rem;">
+							<li><strong>Real-world Problem Solving:</strong> Successfully completed capstone projects using actual industry datasets, demonstrating ability to extract actionable insights from complex data</li>
+							<li><strong>Cross-functional Collaboration:</strong> Worked effectively with professionals from diverse backgrounds including engineering, business, and academia</li>
+							<li><strong>Technical Excellence:</strong> Achieved proficiency in the complete data science stack, from data acquisition to model deployment</li>
+							<li><strong>Scientific Approach:</strong> Developed rigorous methodology for approaching data problems with proper hypothesis formulation and validation</li>
+							<li><strong>Communication Mastery:</strong> Learned to translate complex technical findings into compelling business narratives</li>
+							<li><strong>Continuous Learning:</strong> Established foundation for lifelong learning in rapidly evolving data science landscape</li>
+						</ul>
+					</div>
+
+					<!-- Future Applications -->
+					<div class="content-card">
+						<h3>🔮 Ongoing Impact in Data Engineering</h3>
+						<p>The principles and methodologies learned during DS4A continue to inform my approach to data engineering challenges. The program's emphasis on rigorous analysis, collaborative problem-solving, and effective communication has proven invaluable in my current role designing and implementing enterprise-scale data solutions.</p>
+						
+						<p>The statistical foundation and machine learning knowledge gained during the program enables me to better understand the downstream applications of the data pipelines I build, ensuring that my engineering solutions effectively support advanced analytics and AI initiatives across organizations.</p>
+					</div>
+
 				</div>
+			</div>
 
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/danielpesa7" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/danielpesa7" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-							<li><a class="icon alt fa-envelope"><span class="label">Email</span></a>  contacto@danielperico.com</li>
-							<!--<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>-->
-					</ul>
-					<ul class="copyright">
-						<li>&copy; DPerico. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
-
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/danielpesa7" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/danielpesa7" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a class="icon alt fa-envelope"><span class="label">Email</span></a> contacto@danielperico.com</li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; DPerico. All rights reserved.</li><li>Design: Modern Learning Theme</li>
+				</ul>
+			</footer>
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-			
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>

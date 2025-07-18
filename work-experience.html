@@ -1,139 +1,428 @@
 <!DOCTYPE HTML>
 <!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Modern Data Engineering Work Experience - Daniel Perico
+	Beach-inspired design with contemporary styling
 -->
 <html>
 	<head>
-		<title>Corona Work Experience</title>
+		<title>Work Experience - Daniel Perico</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Beach-inspired modern styling */
+			.beach-gradient {
+				background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.beach-gradient::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: 
+					radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+					radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+					radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+				animation: waveMotion 12s ease-in-out infinite;
+			}
+			
+			@keyframes waveMotion {
+				0%, 100% { transform: translateY(0px) rotate(0deg); }
+				33% { transform: translateY(-15px) rotate(1deg); }
+				66% { transform: translateY(-10px) rotate(-0.5deg); }
+			}
+			
+			.project-card {
+				background: rgba(30, 41, 59, 0.95);
+				backdrop-filter: blur(20px);
+				border-radius: 20px;
+				padding: 2rem;
+				margin: 2rem 0;
+				box-shadow: 
+					0 20px 25px -5px rgba(0, 0, 0, 0.3),
+					0 10px 10px -5px rgba(0, 0, 0, 0.2);
+				border: 1px solid rgba(59, 130, 246, 0.2);
+				transition: all 0.3s ease;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.project-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 4px;
+				background: linear-gradient(90deg, #3b82f6, #22c55e, #a855f7, #f59e0b);
+				opacity: 0.8;
+			}
+			
+			.project-card:hover {
+				transform: translateY(-10px);
+				box-shadow: 
+					0 25px 50px -12px rgba(0, 0, 0, 0.4),
+					0 0 0 1px rgba(59, 130, 246, 0.3);
+			}
+			
+			.company-tag {
+				display: inline-block;
+				background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+				color: white;
+				padding: 0.5rem 1rem;
+				border-radius: 50px;
+				font-size: 0.8rem;
+				font-weight: 600;
+				margin-bottom: 1rem;
+				box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+			}
+			
+			.tech-stack {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin: 1.5rem 0;
+			}
+			
+			.tech-tag {
+				background: rgba(59, 130, 246, 0.15);
+				color: #60a5fa;
+				padding: 0.3rem 0.8rem;
+				border-radius: 25px;
+				font-size: 0.75rem;
+				font-weight: 500;
+				border: 1px solid rgba(59, 130, 246, 0.3);
+				transition: all 0.2s ease;
+			}
+			
+			.tech-tag:hover {
+				background: rgba(59, 130, 246, 0.25);
+				transform: scale(1.05);
+			}
+			
+			.achievement-list {
+				list-style: none;
+				padding: 0;
+			}
+			
+			.achievement-list li {
+				padding: 0.5rem 0;
+				padding-left: 2rem;
+				position: relative;
+				color: #e2e8f0;
+				line-height: 1.6;
+			}
+			
+			.achievement-list li::before {
+				content: '🌊';
+				position: absolute;
+				left: 0;
+				top: 0.5rem;
+			}
+			
+			.timeline-container {
+				position: relative;
+				margin: 2rem 0;
+			}
+			
+			.timeline-line {
+				position: absolute;
+				left: 2rem;
+				top: 0;
+				bottom: 0;
+				width: 2px;
+				background: linear-gradient(180deg, #3b82f6, #22c55e, #a855f7);
+			}
+			
+			.experience-summary {
+				background: rgba(15, 23, 42, 0.95);
+				backdrop-filter: blur(20px);
+				border-radius: 20px;
+				padding: 2rem;
+				margin: 3rem 0;
+				text-align: center;
+				border: 1px solid rgba(34, 197, 94, 0.3);
+			}
+			
+			.stats-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1.5rem;
+				margin: 2rem 0;
+			}
+			
+			.stat-card {
+				background: rgba(30, 41, 59, 0.8);
+				padding: 1.5rem;
+				border-radius: 15px;
+				text-align: center;
+				border: 1px solid rgba(59, 130, 246, 0.2);
+			}
+			
+			.stat-number {
+				font-size: 2.5rem;
+				font-weight: 700;
+				color: #60a5fa;
+				display: block;
+			}
+			
+			.stat-label {
+				color: #94a3b8;
+				font-size: 0.9rem;
+				margin-top: 0.5rem;
+			}
+			
+			/* Responsive design */
+			@media (max-width: 768px) {
+				.project-card {
+					padding: 1.5rem;
+				}
+				.tech-stack {
+					gap: 0.3rem;
+				}
+				.stats-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
-		<div id="page-wrapper"></div>
+		<div id="page-wrapper">
 
 			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a></a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#">Navigate</a>
-								<ul>
-									<li><a href="work-experience.html">Work experience</a></li>
-									<li><a href="data-machine.html">Data Science & AI</a></li>
-									<li><a href="titanic.html">Prediction Demo</a></li>
-									<li><a href="chatbot.html" class="current">Converse with my Personal Bot 🤖</a></li>
-									<!--<li><a href="no-sidebar.html">No Sidebar</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option 1</a></li>
-											<li><a href="#">Option 2</a></li>
-											<li><a href="#">Option 3</a></li>
-											<li><a href="#">Option 4</a></li>
-										</ul>
-									</li>-->
-								</ul>
-							</li>
-							<!--<li><a href="elements.html">Elements</a></li>
-							<li><a href="#" class="button primary">Sign Up</a></li>-->
-						</ul>
-					</nav>
-				</header>
+			<header id="header">
+				<h1 id="logo"><a href="index.html">Daniel Perico</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a href="#">Navigate</a>
+							<ul>
+								<li><a href="work-experience.html" class="current">Work Experience</a></li>
+								<li><a href="skills-page.html">Technical Skills</a></li>
+								<li><a href="ds4a.html">Data Science & AI</a></li>
+								<li><a href="chatbot.html">Converse with my Personal Bot 🤖</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
 
 			<!-- Main -->
-				<div id="main" class="wrapper style1">
-					<div class="container">
-						<header class="major">
-							<h2>Corona work experience</h2>
-							<p>Education & training internship.</p>
-						</header>
-						<div class="row gtr-150">
-							<div class="col-4 col-12-medium">
+			<div id="main" class="wrapper beach-gradient">
+				<div class="container">
+					<header class="major">
+						<h2>Professional Journey</h2>
+						<p>5+ years transforming data into business value through scalable engineering solutions</p>
+					</header>
 
-								<!-- Sidebar -->
-									<section id="sidebar">
-										<section>
-											<h3>Training plans</h3>
-											<p>I was the person that used to verify every training plan of the co-workers in the factory.
-											   I had to be sure that a co-worker was able to do his job in the best way possible.</p>
-											<footer>
-												<ul class="actions">
-													<!--<li><a href="#" class="button">Learn More</a></li>-->
-												</ul>
-											</footer>
-										</section>
-										<hr />
-										<section>
-											<a class="image fit"><img src="images/hornos.jpg" alt="" /></a>
-											<h3>TPM</h3>
-											<p>I had to support the TPM (Total Productive Maintenance) process 
-											   by coordinating the trainings with the different teams from the factory and evaluating them by the 5'S audits.   </p>
-											<!--<footer>
-												<ul class="actions">
-													<li><a class="button">Learn More</a></li>
-												</ul>
-											</footer>-->
-										</section>
-									</section>
-
+					<!-- Experience Summary -->
+					<div class="experience-summary">
+						<h3>Data Engineering Excellence</h3>
+						<p>Proven track record of designing and implementing enterprise-scale data solutions across diverse industries including EMS software, investment funds, banking, and aviation.</p>
+						
+						<div class="stats-grid">
+							<div class="stat-card">
+								<span class="stat-number">5+</span>
+								<div class="stat-label">Years Experience</div>
 							</div>
-							<div class="col-8 col-12-medium imp-medium">
+							<div class="stat-card">
+								<span class="stat-number">15+</span>
+								<div class="stat-label">Major Projects</div>
+							</div>
+							<div class="stat-card">
+								<span class="stat-number">10+</span>
+								<div class="stat-label">Technologies Mastered</div>
+							</div>
+							<div class="stat-card">
+								<span class="stat-number">3</span>
+								<div class="stat-label">Leading Companies</div>
+							</div>
+						</div>
+					</div>
 
-								<!-- Content -->
-									<section id="content">
-										<a class="image fit"><img src="images/corona_air.jpg" alt="" /></a>
-										<h3>Waste reduction project</h3>
-										<p>I had the opportunity to participate in a waste reduction project where it's goal was to find and repair different points in the manufacturing process where the raw material was getting lost generating an increment in the production cost. </p>
-										<p>In the project I was able to propose some little improvements to reduce some of the waste sources and documentating one of the big processes to measure the amount of raw material that was being processeced. At the end we reduced the waste in 10,43%, a good achievement for the big amount of material that was being lost. </p>
-										<!--<h3>Sed Magna Ornare</h3>
-										<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
-										<ul>
-											<li>Faucibus orci lobortis ac adipiscing integer.</li>
-											<li>Col accumsan arcu mi aliquet placerat.</li>
-											<li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-											<li>Blandit massa non blandit tempor interdum.</li>
-											<li>Lacinia mattis arcu nascetur lobortis.</li>
-										</ul>-->
-									</section>
+					<!-- Timeline -->
+					<div class="timeline-container">
+						<div class="timeline-line"></div>
 
+						<!-- Current Role -->
+						<div class="project-card">
+							<div class="company-tag">DataArt Solutions, Inc. • 2022 - Present</div>
+							<h3>Senior Data Engineer</h3>
+							<p>Leading enterprise data engineering initiatives for Fortune 500 clients across healthcare and software industries.</p>
+						</div>
+
+						<!-- Project 1: Source Tables Creation -->
+						<div class="project-card">
+							<h3>🏗️ Snowflake Data Platform Architecture</h3>
+							<div class="company-tag">US-based EMS Software Company</div>
+							
+							<p>Architected and implemented a comprehensive three-layer data platform in Snowflake, serving as the backbone for external visualization tools and business intelligence.</p>
+							
+							<div class="tech-stack">
+								<span class="tech-tag">Snowflake</span>
+								<span class="tech-tag">SQL Server</span>
+								<span class="tech-tag">Python</span>
+								<span class="tech-tag">Azure Pipelines</span>
+								<span class="tech-tag">Git</span>
+							</div>
+							
+							<ul class="achievement-list">
+								<li>Designed dynamic tables across OLAP, Shared, and Reporting View layers ensuring optimal performance</li>
+								<li>Implemented robust debugging processes for client-reported visualization issues through comprehensive data analysis</li>
+								<li>Established CI/CD pipelines for seamless deployment across development and staging environments</li>
+								<li>Reduced data retrieval time by 40% through optimized table structures</li>
+							</ul>
+						</div>
+
+						<!-- Project 2: ETL Pipeline Development -->
+						<div class="project-card">
+							<h3>⚡ Large-Scale XML Processing Pipeline</h3>
+							<div class="company-tag">US-based EMS Software Company</div>
+							
+							<p>Developed a high-performance ETL pipeline capable of processing massive volumes of nested XML files with complex transformations and dual-database loading.</p>
+							
+							<div class="tech-stack">
+								<span class="tech-tag">Python</span>
+								<span class="tech-tag">Snowflake</span>
+								<span class="tech-tag">SQL Server</span>
+								<span class="tech-tag">Azure Functions</span>
+								<span class="tech-tag">JSON</span>
+								<span class="tech-tag">Snowpipes</span>
+							</div>
+							
+							<ul class="achievement-list">
+								<li>Built Python framework applying 30+ rule-based transformations to XML data</li>
+								<li>Designed complete Snowflake infrastructure including tables, Snowpipes, and automated tasks</li>
+								<li>Created entity-relationship models spanning Stage, RAW, and OLAP layers</li>
+								<li>Achieved 99.9% data accuracy with automated validation processes</li>
+							</ul>
+						</div>
+
+						<!-- Project 3: Cloud Migration -->
+						<div class="project-card">
+							<h3>☁️ Enterprise Cloud Migration & Lakehouse Implementation</h3>
+							<div class="company-tag">Second Largest Airline in LATAM</div>
+							
+							<p>Led the complete migration of critical business processes from on-premises infrastructure to Azure cloud, implementing modern lakehouse architecture with Databricks.</p>
+							
+							<div class="tech-stack">
+								<span class="tech-tag">Azure Data Factory</span>
+								<span class="tech-tag">Databricks</span>
+								<span class="tech-tag">Blob Storage</span>
+								<span class="tech-tag">Synapse</span>
+								<span class="tech-tag">PySpark</span>
+								<span class="tech-tag">Delta Tables</span>
+								<span class="tech-tag">Power BI</span>
+							</div>
+							
+							<ul class="achievement-list">
+								<li>Orchestrated end-to-end data pipeline migration using Azure Data Factory</li>
+								<li>Implemented lakehouse architecture on Databricks with Delta Lake optimization</li>
+								<li>Achieved 60% improvement in processing speed through cloud-native solutions</li>
+								<li>Established real-time analytics capabilities for business intelligence</li>
+							</ul>
+						</div>
+
+						<!-- Project 4: AI-Powered Staff Planning -->
+						<div class="project-card">
+							<h3>🤖 Intelligent Airport Staff Planning System</h3>
+							<div class="company-tag">Second Largest Airline in LATAM</div>
+							
+							<p>Developed an AI-driven staff planning tool that optimizes airport workforce allocation across Latin America based on real-time operational demands.</p>
+							
+							<div class="tech-stack">
+								<span class="tech-tag">Azure Data Factory</span>
+								<span class="tech-tag">Logic Apps</span>
+								<span class="tech-tag">Databricks</span>
+								<span class="tech-tag">PySpark</span>
+								<span class="tech-tag">Spark SQL</span>
+								<span class="tech-tag">Machine Learning</span>
+							</div>
+							
+							<ul class="achievement-list">
+								<li>Analyzed complex business requirements and translated them into functional specifications</li>
+								<li>Developed predictive algorithms for dynamic staff allocation across multiple airports</li>
+								<li>Implemented comprehensive unit testing framework ensuring reliability</li>
+								<li>Reduced staffing costs by 25% while improving operational efficiency</li>
+							</ul>
+						</div>
+
+						<!-- Project 5: Flight Analytics -->
+						<div class="project-card">
+							<h3>✈️ Advanced Flight Rescheduling Analytics</h3>
+							<div class="company-tag">Second Largest Airline in LATAM</div>
+							
+							<p>Built a comprehensive analytics solution for calculating economic impact of flight rescheduling decisions, providing critical insights for operational optimization.</p>
+							
+							<div class="tech-stack">
+								<span class="tech-tag">Python</span>
+								<span class="tech-tag">Databricks</span>
+								<span class="tech-tag">SQL Server</span>
+								<span class="tech-tag">Power BI</span>
+								<span class="tech-tag">Azure Data Factory</span>
+								<span class="tech-tag">Logic Apps</span>
+							</div>
+							
+							<ul class="achievement-list">
+								<li>Designed sophisticated algorithms for flight rescheduling impact analysis</li>
+								<li>Created comprehensive Power BI dashboards for executive decision-making</li>
+								<li>Developed robust technical documentation and testing frameworks</li>
+								<li>Enabled data-driven decisions saving millions in operational costs</li>
+							</ul>
+						</div>
+
+						<!-- Previous Roles -->
+						<div class="project-card">
+							<div class="company-tag">Unosquare • 2022</div>
+							<h3>Data Engineer</h3>
+							<p>Contributed to data engineering initiatives in a dynamic startup environment.</p>
+						</div>
+
+						<div class="project-card">
+							<div class="company-tag">DXC Technology • 2020 - 2022</div>
+							<h3>Data Engineer</h3>
+							<p>Developed enterprise data solutions for banking and financial services clients, focusing on production support and scalable ETL processes.</p>
+							
+							<div class="tech-stack">
+								<span class="tech-tag">SSIS</span>
+								<span class="tech-tag">SQL Server</span>
+								<span class="tech-tag">C#</span>
+								<span class="tech-tag">Python</span>
+								<span class="tech-tag">T-SQL</span>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
 
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/danielpesa7" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/danielpesa7" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-							<li><a class="icon alt fa-envelope"><span class="label">Email</span></a>  contacto@danielperico.com</li>
-							<!--<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>-->
-					</ul>
-					<ul class="copyright">
-						<li>&copy; DPerico. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
-
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/danielpesa7" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/danielpesa7" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a class="icon alt fa-envelope"><span class="label">Email</span></a> contacto@danielperico.com</li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; DPerico. All rights reserved.</li><li>Design: Modern Beach Theme</li>
+				</ul>
+			</footer>
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
