@@ -4,503 +4,527 @@
 	Based on Landed by HTML5 UP - Dark modern design
 -->
 <html>
-	<head>
-		<title>Daniel G Perico Sánchez - Data Engineer</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			/* Modern dark theme styling */
-			body.landing {
-				background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-				min-height: 100vh;
-			}
-			
+
+<head>
+	<title>Daniel G Perico Sánchez - Data Engineer</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<style>
+		/* Modern dark theme styling */
+		body.landing {
+			background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+			min-height: 100vh;
+		}
+
+		#banner {
+			background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+			position: relative;
+			overflow: hidden;
+			margin-bottom: 0;
+			padding-bottom: 2rem;
+			min-height: 60vh;
+			max-height: 70vh;
+			display: flex;
+			align-items: center;
+		}
+
+		#banner::before {
+			display: none;
+		}
+
+		#banner .content {
+			position: relative;
+			z-index: 2;
+			background: rgba(30, 41, 59, 0.8);
+			border-radius: 20px;
+			margin: 2rem auto;
+			padding: 2rem;
+			border: 1px solid rgba(59, 130, 246, 0.2);
+			width: calc(100% - 4rem);
+			max-width: 1200px;
+		}
+
+		#banner .content header h2 {
+			color: #e2e8f0;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+			margin-bottom: 1rem;
+		}
+
+		#banner .content header p {
+			color: #94a3b8;
+			font-size: 1.2rem;
+		}
+
+		#banner .content .image {
+			border-radius: 50% !important;
+			border: 3px solid rgba(59, 130, 246, 0.3);
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			overflow: hidden;
+			display: inline-block;
+			width: 15em;
+			height: 15em;
+			margin-left: 2em;
+			vertical-align: middle;
+		}
+
+		#banner .content .image img {
+			border-radius: 50% !important;
+			width: 100% !important;
+			height: 100% !important;
+			object-fit: cover;
+			display: block;
+		}
+
+		#banner .content .image:hover {
+			transform: scale(1.05);
+			box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+			border-color: rgba(59, 130, 246, 0.5);
+		}
+
+		/* About Section - Unique Styling */
+		.about-section-unique {
+			background: rgba(30, 41, 59, 0.95);
+			border-radius: 20px;
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+			border: 1px solid rgba(59, 130, 246, 0.2);
+			margin: 2rem 2rem 3rem 2rem;
+			padding: 2rem;
+			color: #e2e8f0;
+			position: static;
+			z-index: auto;
+			clear: both;
+			display: block;
+			width: auto;
+		}
+
+		/* Core Expertise Section - Unique Styling */
+		.core-expertise-section-unique {
+			background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+			color: #e2e8f0;
+			position: static;
+			z-index: auto;
+			margin: 3rem 0;
+			padding: 3rem 0;
+			width: 100%;
+			display: block;
+			clear: both;
+		}
+
+		.expertise-content {
+			background: rgba(30, 41, 59, 0.95);
+			border-radius: 20px;
+			border: 1px solid rgba(59, 130, 246, 0.2);
+			position: static;
+			z-index: auto;
+			margin: 0 2rem;
+			padding: 2rem;
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+		}
+
+		/* Professional Journey Section - Unique Styling */
+		.professional-journey-section-unique {
+			background: rgba(30, 41, 59, 0.95);
+			border-radius: 20px;
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+			border: 1px solid rgba(59, 130, 246, 0.2);
+			margin: 4rem 2rem 2rem 2rem;
+			padding: 2rem;
+			color: #e2e8f0;
+			position: static;
+			z-index: auto;
+			clear: both;
+			display: block;
+			width: auto;
+		}
+
+		.skills-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+			margin-top: 2rem;
+		}
+
+		.skill-card {
+			background: rgba(15, 23, 42, 0.9);
+			padding: 2rem;
+			border-radius: 15px;
+			border: 1px solid rgba(59, 130, 246, 0.2);
+			transition: transform 0.2s ease;
+		}
+
+		.skill-card:hover {
+			transform: translateY(-3px);
+			border-color: rgba(59, 130, 246, 0.4);
+		}
+
+		.skill-icon {
+			font-size: 2.5rem;
+			color: #60a5fa;
+			margin-bottom: 1rem;
+		}
+
+		.cta-buttons {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+			margin-top: 2rem;
+			flex-wrap: wrap;
+		}
+
+		.modern-button {
+			background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+			color: white;
+			padding: 1rem 2rem;
+			border: none;
+			border-radius: 10px;
+			text-decoration: none;
+			font-weight: 500;
+			transition: transform 0.2s ease;
+			box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+		}
+
+		.modern-button:hover {
+			transform: translateY(-1px);
+			color: white;
+			border-bottom: none;
+		}
+
+		.modern-button.secondary {
+			background: transparent;
+			border: 2px solid #3b82f6;
+			color: #60a5fa;
+		}
+
+		.modern-button.secondary:hover {
+			background: #3b82f6;
+			color: white;
+		}
+
+		/* Navigation updates */
+		#header {
+			background: rgba(15, 23, 42, 0.95);
+			backdrop-filter: blur(20px);
+			border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+		}
+
+		#header nav ul li a:hover {
+			color: #60a5fa !important;
+		}
+
+		/* Spotlight section styling */
+		.spotlight.modern {
+			background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+			color: #e2e8f0;
+			position: relative;
+			z-index: 1;
+			margin-top: 2rem;
+			padding: 3rem 0;
+			width: 100%;
+			display: block;
+		}
+
+		.spotlight.modern .content {
+			background: rgba(30, 41, 59, 0.8);
+			backdrop-filter: blur(20px);
+			border-radius: 20px;
+			border: 1px solid rgba(59, 130, 246, 0.2);
+			position: relative;
+			z-index: 1;
+			margin: 0 2rem;
+			padding: 2rem;
+		}
+
+		/* Footer updates */
+		#footer {
+			background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+			border-top: 1px solid rgba(59, 130, 246, 0.2);
+			position: relative;
+			z-index: 1;
+			clear: both;
+			margin-top: 2rem;
+		}
+
+		/* Fix section spacing and overlapping */
+		#about {
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			padding-top: 0 !important;
+			position: static;
+			z-index: auto;
+			clear: both;
+		}
+
+		/* Ensure proper stacking order */
+		body.landing #page-wrapper {
+			padding-top: 0;
+			position: relative;
+		}
+
+		/* Remove any floating or absolute positioning that might cause overlap */
+		section {
+			position: relative;
+			clear: both;
+		}
+
+		/* Ensure sections don't overlap */
+		.wrapper {
+			position: relative;
+			z-index: 1;
+			clear: both;
+		}
+
+		@media (max-width: 768px) {
 			#banner {
-				background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-				position: relative;
-				overflow: hidden;
-				margin-bottom: 0;
-				padding-bottom: 2rem;
-				min-height: 60vh;
-				max-height: 70vh;
-				display: flex;
+				min-height: 50vh;
+				max-height: 60vh;
+			}
+
+			#banner .content {
+				margin: 1rem;
+				padding: 1.5rem;
+			}
+
+			.about-section-unique {
+				margin: 1rem 1rem 2rem 1rem;
+				padding: 1.5rem;
+			}
+
+			.core-expertise-section-unique {
+				margin: 1rem 0;
+				padding: 2rem 0;
+			}
+
+			.expertise-content {
+				margin: 0 1rem;
+				padding: 1.5rem;
+			}
+
+			.professional-journey-section-unique {
+				margin: 2rem 1rem 1rem 1rem;
+				padding: 1.5rem;
+			}
+
+			.skills-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.cta-buttons {
+				flex-direction: column;
 				align-items: center;
 			}
-			
-			#banner::before {
-				display: none;
-			}
-			
-			#banner .content {
-				position: relative;
-				z-index: 2;
-				background: rgba(30, 41, 59, 0.8);
-				border-radius: 20px;
-				margin: 2rem auto;
-				padding: 2rem;
-				border: 1px solid rgba(59, 130, 246, 0.2);
-				width: calc(100% - 4rem);
-				max-width: 1200px;
-			}
-			
-			#banner .content header h2 {
-				color: #e2e8f0;
-				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-			
-			#banner .content header p {
-				color: #94a3b8;
-				font-size: 1.2rem;
-			}
-			
+
 			#banner .content .image {
-				border-radius: 50% !important;
-				border: 3px solid rgba(59, 130, 246, 0.3);
-				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
-				overflow: hidden;
-				display: inline-block;
-				width: 15em;
-				height: 15em;
-				margin-left: 2em;
-				vertical-align: middle;
-			}
-			
-			#banner .content .image img {
-				border-radius: 50% !important;
-				width: 100% !important;
-				height: 100% !important;
-				object-fit: cover;
+				margin-left: 0;
+				margin-top: 1rem;
 				display: block;
+				width: 12em;
+				height: 12em;
+				margin: 1rem auto 0 auto;
 			}
-			
-			#banner .content .image:hover {
-				transform: scale(1.05);
-				box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
-				border-color: rgba(59, 130, 246, 0.5);
-			}
-			
-			/* About Section - Unique Styling */
-			.about-section-unique {
-				background: rgba(30, 41, 59, 0.95);
-				border-radius: 20px;
-				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-				border: 1px solid rgba(59, 130, 246, 0.2);
-				margin: 2rem 2rem 3rem 2rem;
-				padding: 2rem;
-				color: #e2e8f0;
-				position: static;
-				z-index: auto;
-				clear: both;
-				display: block;
-				width: auto;
-			}
-			
-			/* Core Expertise Section - Unique Styling */
-			.core-expertise-section-unique {
-				background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-				color: #e2e8f0;
-				position: static;
-				z-index: auto;
-				margin: 3rem 0;
-				padding: 3rem 0;
-				width: 100%;
-				display: block;
-				clear: both;
-			}
-			
-			.expertise-content {
-				background: rgba(30, 41, 59, 0.95);
-				border-radius: 20px;
-				border: 1px solid rgba(59, 130, 246, 0.2);
-				position: static;
-				z-index: auto;
-				margin: 0 2rem;
-				padding: 2rem;
-				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-			}
-			
-			/* Professional Journey Section - Unique Styling */
-			.professional-journey-section-unique {
-				background: rgba(30, 41, 59, 0.95);
-				border-radius: 20px;
-				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-				border: 1px solid rgba(59, 130, 246, 0.2);
-				margin: 4rem 2rem 2rem 2rem;
-				padding: 2rem;
-				color: #e2e8f0;
-				position: static;
-				z-index: auto;
-				clear: both;
-				display: block;
-				width: auto;
-			}
-			
-			.skills-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				gap: 2rem;
-				margin-top: 2rem;
-			}
-			
-			.skill-card {
-				background: rgba(15, 23, 42, 0.9);
-				padding: 2rem;
-				border-radius: 15px;
-				border: 1px solid rgba(59, 130, 246, 0.2);
-				transition: transform 0.2s ease;
-			}
-			
-			.skill-card:hover {
-				transform: translateY(-3px);
-				border-color: rgba(59, 130, 246, 0.4);
-			}
-			
-			.skill-icon {
-				font-size: 2.5rem;
-				color: #60a5fa;
-				margin-bottom: 1rem;
-			}
-			
-			.cta-buttons {
-				display: flex;
-				gap: 1rem;
-				justify-content: center;
-				margin-top: 2rem;
-				flex-wrap: wrap;
-			}
-			
-			.modern-button {
-				background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-				color: white;
-				padding: 1rem 2rem;
-				border: none;
-				border-radius: 10px;
-				text-decoration: none;
-				font-weight: 500;
-				transition: transform 0.2s ease;
-				box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
-			}
-			
-			.modern-button:hover {
-				transform: translateY(-1px);
-				color: white;
-				border-bottom: none;
-			}
-			
-			.modern-button.secondary {
-				background: transparent;
-				border: 2px solid #3b82f6;
-				color: #60a5fa;
-			}
-			
-			.modern-button.secondary:hover {
-				background: #3b82f6;
-				color: white;
-			}
-			
-			/* Navigation updates */
-			#header {
-				background: rgba(15, 23, 42, 0.95);
-				backdrop-filter: blur(20px);
-				border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-			}
-			
-			#header nav ul li a:hover {
-				color: #60a5fa !important;
-			}
-			
-			/* Spotlight section styling */
-			.spotlight.modern {
-				background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-				color: #e2e8f0;
-				position: relative;
-				z-index: 1;
-				margin-top: 2rem;
-				padding: 3rem 0;
-				width: 100%;
-				display: block;
-			}
-			
-			.spotlight.modern .content {
-				background: rgba(30, 41, 59, 0.8);
-				backdrop-filter: blur(20px);
-				border-radius: 20px;
-				border: 1px solid rgba(59, 130, 246, 0.2);
-				position: relative;
-				z-index: 1;
-				margin: 0 2rem;
-				padding: 2rem;
-			}
-			
-			/* Footer updates */
-			#footer {
-				background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-				border-top: 1px solid rgba(59, 130, 246, 0.2);
-				position: relative;
-				z-index: 1;
-				clear: both;
-				margin-top: 2rem;
-			}
-			
-			/* Fix section spacing and overlapping */
-			#about {
-				margin-top: 0 !important;
-				margin-bottom: 0 !important;
-				padding-top: 0 !important;
-				position: static;
-				z-index: auto;
-				clear: both;
-			}
-			
-			/* Ensure proper stacking order */
-			body.landing #page-wrapper {
-				padding-top: 0;
-				position: relative;
-			}
-			
-			/* Remove any floating or absolute positioning that might cause overlap */
-			section {
-				position: relative;
-				clear: both;
-			}
-			
-			/* Ensure sections don't overlap */
-			.wrapper {
-				position: relative;
-				z-index: 1;
-				clear: both;
-			}
-			
-			@media (max-width: 768px) {
-				#banner {
-					min-height: 50vh;
-					max-height: 60vh;
-				}
-				
-				#banner .content {
-					margin: 1rem;
-					padding: 1.5rem;
-				}
-				
-				.about-section-unique {
-					margin: 1rem 1rem 2rem 1rem;
-					padding: 1.5rem;
-				}
-				
-				.core-expertise-section-unique {
-					margin: 1rem 0;
-					padding: 2rem 0;
-				}
-				
-				.expertise-content {
-					margin: 0 1rem;
-					padding: 1.5rem;
-				}
-				
-				.professional-journey-section-unique {
-					margin: 2rem 1rem 1rem 1rem;
-					padding: 1.5rem;
-				}
-				
-				.skills-grid {
-					grid-template-columns: 1fr;
-				}
-				.cta-buttons {
-					flex-direction: column;
-					align-items: center;
-				}
-				
-				#banner .content .image {
-					margin-left: 0;
-					margin-top: 1rem;
-					display: block;
-					width: 12em;
-					height: 12em;
-					margin: 1rem auto 0 auto;
-				}
-			}
-		</style>
-	</head>
-	<body class="is-preload landing">
-		<div id="page-wrapper">
+		}
+	</style>
+</head>
 
-			<!-- Header -->
-			<header id="header">
-				<h1 id="logo"><a href="index.html">Daniel Perico</a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li>
-							<a href="#">Navigate</a>
-							<ul>
-								<li><a href="work-experience.html">Work Experience</a></li>
-								<li><a href="skills-page.html">Technical Skills</a></li>
-								<li><a href="ds4a.html">Data Science & AI</a></li>
-								<li><a href="chatbot.html">Converse with my Personal Bot 🤖</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</header>
+<body class="is-preload landing">
+	<div id="page-wrapper">
 
-			<!-- Banner -->
-			<section id="banner">
-				<div class="content">
-					<header>
-						<h2>Daniel Guillermo Perico Sánchez</h2>
-						<p>Industrial Engineer | Data Engineer<br />
+		<!-- Header -->
+		<header id="header">
+			<h1 id="logo"><a href="index.html">Daniel Perico</a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>
+						<a href="#">Navigate</a>
+						<ul>
+							<li><a href="work-experience.html">Work Experience</a></li>
+							<li><a href="skills-page.html">Technical Skills</a></li>
+							<li><a href="ds4a.html">Data Science & AI</a></li>
+							<li><a href="chatbot.html">Converse with my Personal Bot 🤖</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Banner -->
+		<section id="banner">
+			<div class="content">
+				<header>
+					<h2>Daniel Guillermo Perico Sánchez</h2>
+					<p>Industrial Engineer | Data Engineer<br />
 						Building the future with data, one pipeline at a time.</p>
-					</header>
-					<span class="image"><img src="images/hv.jpeg" alt="Daniel Perico" /></span>
-				</div>
-				<!-- REMOVED: goto-next button -->
-			</section>
+				</header>
+				<span class="image"><img src="images/hv.jpeg" alt="Daniel Perico" /></span>
+			</div>
+			<!-- REMOVED: goto-next button -->
+		</section>
 
-			<!-- About Section -->
-			<section id="about" class="about-section-unique">
+		<!-- About Section -->
+		<section id="about" class="about-section-unique">
+			<div class="container">
+				<header class="major">
+					<h2 style="color: #e2e8f0;">About Me</h2>
+					<p style="color: #94a3b8;">Passionate Data Engineer with a drive for innovation</p>
+				</header>
+
+				<div class="row gtr-150">
+					<div class="col-8 col-12-medium">
+						<p>I am a passionate Data Engineer with strong technical skills who leverages programming as the
+							primary tool to automate complex workflows and focus on what truly matters. My approach is
+							data-driven - I believe that advanced analysis and intelligent interpretation of information
+							is crucial for generating real value in every project I'm involved in.</p>
+
+						<p>With a background in Industrial Engineering and specialized expertise in Data Engineering, I
+							bridge the gap between business operations and cutting-edge technology. My experience spans
+							across building robust data pipelines, implementing machine learning solutions, and creating
+							scalable data architectures that drive business intelligence.</p>
+
+					</div>
+					<div class="col-4 col-12-medium">
+						<div class="skills-grid" style="grid-template-columns: 1fr;">
+							<div class="skill-card">
+								<div class="skill-icon">
+									<i class="fa fa-database"></i>
+								</div>
+								<h3>Data Engineering</h3>
+								<p>Building scalable data pipelines and ETL processes for modern data architectures.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Skills Spotlight -->
+		<section class="core-expertise-section-unique">
+			<div class="expertise-content">
 				<div class="container">
 					<header class="major">
-						<h2 style="color: #e2e8f0;">About Me</h2>
-						<p style="color: #94a3b8;">Passionate Data Engineer with a drive for innovation</p>
+						<h2 style="color: #e2e8f0;">Core Expertise</h2>
+						<p style="color: #94a3b8;">Technologies and skills I work with</p>
 					</header>
-					
-					<div class="row gtr-150">
-						<div class="col-8 col-12-medium">
-							<p>I am a passionate Data Engineer with strong technical skills who leverages programming as the primary tool to automate complex workflows and focus on what truly matters. My approach is data-driven - I believe that advanced analysis and intelligent interpretation of information is crucial for generating real value in every project I'm involved in.</p>
-							
-							<p>With a background in Industrial Engineering and specialized expertise in Data Engineering, I bridge the gap between business operations and cutting-edge technology. My experience spans across building robust data pipelines, implementing machine learning solutions, and creating scalable data architectures that drive business intelligence.</p>
-							
-						</div>
-						<div class="col-4 col-12-medium">
-							<div class="skills-grid" style="grid-template-columns: 1fr;">
-								<div class="skill-card">
-									<div class="skill-icon">
-										<i class="fa fa-database"></i>
-									</div>
-									<h3>Data Engineering</h3>
-									<p>Building scalable data pipelines and ETL processes for modern data architectures.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
 
-			<!-- Skills Spotlight -->
-			<section class="core-expertise-section-unique">
-				<div class="expertise-content">
-					<div class="container">
-						<header class="major">
-							<h2 style="color: #e2e8f0;">Core Expertise</h2>
-							<p style="color: #94a3b8;">Technologies and skills I work with</p>
-						</header>
-						
-						<div class="skills-grid">
-							<div class="skill-card">
-								<div class="skill-icon">
-									<i class="fa fa-code"></i>
-								</div>
-								<h3>Programming</h3>
-								<p>Python, SQL and modern programming paradigms for data processing and analysis.</p>
+					<div class="skills-grid">
+						<div class="skill-card">
+							<div class="skill-icon">
+								<i class="fa fa-code"></i>
 							</div>
-							
-							<div class="skill-card">
-								<div class="skill-icon">
-									<i class="fa fa-cloud"></i>
-								</div>
-								<h3>Cloud Platforms</h3>
-								<p>Azure and AWS for scalable data infrastructure and cloud-native solutions.</p>
+							<h3>Programming</h3>
+							<p>Python, SQL and modern programming paradigms for data processing and analysis.</p>
+						</div>
+
+						<div class="skill-card">
+							<div class="skill-icon">
+								<i class="fa fa-cloud"></i>
 							</div>
-							
-							<div class="skill-card">
-								<div class="skill-icon">
-									<i class="fa fa-cogs"></i>
-								</div>
-								<h3>Data Tools</h3>
-								<p>Apache Spark, Kafka, Airflow, and modern data stack technologies for enterprise solutions.</p>
+							<h3>Cloud Platforms</h3>
+							<p>Azure and AWS for scalable data infrastructure and cloud-native solutions.</p>
+						</div>
+
+						<div class="skill-card">
+							<div class="skill-icon">
+								<i class="fa fa-cogs"></i>
 							</div>
-							
-							<div class="skill-card">
-								<div class="skill-icon">
-									<i class="fa fa-magic"></i>
-								</div>
-								<h3>Machine Learning</h3>
-								<p>MLOps, model deployment, and AI integration for intelligent data-driven applications.</p>
+							<h3>Data Tools</h3>
+							<p>Apache Spark, Kafka, Airflow, and modern data stack technologies for enterprise
+								solutions.</p>
+						</div>
+
+						<div class="skill-card">
+							<div class="skill-icon">
+								<i class="fa fa-magic"></i>
 							</div>
-							
-							<div class="skill-card">
-								<div class="skill-icon">
-									<i class="fa fa-bar-chart"></i>
-								</div>
-								<h3>Analytics</h3>
-								<p>Advanced data analysis, visualization, and business intelligence for actionable insights.</p>
+							<h3>Machine Learning</h3>
+							<p>MLOps, model deployment, and AI integration for intelligent data-driven applications.</p>
+						</div>
+
+						<div class="skill-card">
+							<div class="skill-icon">
+								<i class="fa fa-bar-chart"></i>
 							</div>
-							
-							<div class="skill-card">
-								<div class="skill-icon">
-									<i class="fa fa-shield"></i>
-								</div>
-								<h3>Data Governance</h3>
-								<p>Data quality, security, and compliance frameworks for enterprise data management.</p>
+							<h3>Analytics</h3>
+							<p>Advanced data analysis, visualization, and business intelligence for actionable insights.
+							</p>
+						</div>
+
+						<div class="skill-card">
+							<div class="skill-icon">
+								<i class="fa fa-shield"></i>
 							</div>
+							<h3>Data Governance</h3>
+							<p>Data quality, security, and compliance frameworks for enterprise data management.</p>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<!-- Professional Journey -->
-			<section class="professional-journey-section-unique">
-				<div class="container">
-					<header class="major">
-						<h2 style="color: #e2e8f0;">Professional Journey</h2>
-						<p style="color: #94a3b8;">From Industrial Engineering to Data Engineering excellence</p>
-					</header>
-					
-					<div class="row gtr-150">
-						<div class="col-6 col-12-medium">
-							<h3>🚀 Current Focus</h3>
-							<p>Currently working as a Data Engineer, I specialize in building robust data infrastructure that enables organizations to make data-driven decisions. My work involves designing and implementing scalable data pipelines, optimizing database performance, and ensuring data quality across complex systems.</p>
-						</div>
-						<div class="col-6 col-12-medium">
-							<h3>🎯 Goals & Vision</h3>
-							<p>I'm passionate about leveraging emerging technologies like AI and machine learning to solve real-world problems. My goal is to continue growing in the data engineering field while contributing to innovative projects that make a meaningful impact.</p>
-						</div>
+		<!-- Professional Journey -->
+		<section class="professional-journey-section-unique">
+			<div class="container">
+				<header class="major">
+					<h2 style="color: #e2e8f0;">Professional Journey</h2>
+					<p style="color: #94a3b8;">From Industrial Engineering to Data Engineering excellence</p>
+				</header>
+
+				<div class="row gtr-150">
+					<div class="col-6 col-12-medium">
+						<h3>🚀 Current Focus</h3>
+						<p>Currently working as a Data Engineer, I specialize in building robust data infrastructure
+							that enables organizations to make data-driven decisions. My work involves designing and
+							implementing scalable data pipelines, optimizing database performance, and ensuring data
+							quality across complex systems.</p>
 					</div>
-					
-					<div class="cta-buttons">
-						<a href="work-experience.html" class="modern-button">Detailed Work History</a>
-						<a href="ds4a.html" class="modern-button secondary">DS4A Experience</a>
-						<a href="chatbot.html" class="modern-button secondary">Personal Chatbot 🤖</a>
+					<div class="col-6 col-12-medium">
+						<h3>🎯 Goals & Vision</h3>
+						<p>I'm passionate about leveraging emerging technologies like AI and machine learning to solve
+							real-world problems. My goal is to continue growing in the data engineering field while
+							contributing to innovative projects that make a meaningful impact.</p>
 					</div>
 				</div>
-			</section>
 
-			<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/danielpesa7" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://github.com/danielpesa7" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-					<li><a class="icon alt fa-envelope"><span class="label">Email</span></a> contacto@danielperico.com</li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; DPerico. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</footer>
+				<div class="cta-buttons">
+					<a href="work-experience.html" class="modern-button">Detailed Work History</a>
+					<a href="ds4a.html" class="modern-button secondary">DS4A Experience</a>
+					<a href="chatbot.html" class="modern-button secondary">Personal Chatbot 🤖</a>
+				</div>
+			</div>
+		</section>
 
-		</div>
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/in/danielpesa7" class="icon alt fa-linkedin"><span
+							class="label">LinkedIn</span></a></li>
+				<li><a href="https://github.com/danielpesa7" class="icon alt fa-github"><span
+							class="label">GitHub</span></a></li>
+				<li><a class="icon alt fa-envelope"><span class="label">Email</span></a> contacto@danielperico.com</li>
+				<elevenlabs-convai agent-id="agent_6801kf92ch5gfs7a524rvmz64xw2"></elevenlabs-convai>
+				<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; DPerico. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+
 </html>
